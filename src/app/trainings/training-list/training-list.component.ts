@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Training } from '../training.model';
 
 @Component({
@@ -6,14 +6,12 @@ import { Training } from '../training.model';
   templateUrl: './training-list.component.html',
   styleUrls: ['./training-list.component.css']
 })
-export class TrainingListComponent implements OnInit {
+export class TrainingListComponent {
 
   @Input() 
   public trainings:Training[];
-  
-  constructor() { }
-
-  ngOnInit() {
+ 
+    onListItemClicked($event:MouseEvent, training:Training){
+    console.log("Training was clicked", training.name)
   }
-
 }

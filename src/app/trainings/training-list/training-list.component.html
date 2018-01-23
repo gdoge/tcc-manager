@@ -1,3 +1,6 @@
-<ul>
-  <li *ngFor="let training of trainings">{{training.name}}</li>
-</ul>
+<mat-list role="list">
+  <mat-list-item role="listitem"
+  *ngFor="let training of trainings"
+  (click)="onListItemClicked($event, training)"
+  >{{training.name}}</mat-list-item>
+</mat-list>
