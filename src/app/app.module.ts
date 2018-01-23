@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatListModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { TrainingsModule } from './trainings/trainings.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, MatListModule, MatFormFieldModule, MatInputModule
+    MatButtonModule, MatCheckboxModule, MatListModule, MatFormFieldModule, MatInputModule,
+    TrainingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
