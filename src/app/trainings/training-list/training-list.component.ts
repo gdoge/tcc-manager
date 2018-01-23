@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Training } from '../training.model';
 
 @Component({
@@ -10,8 +10,12 @@ export class TrainingListComponent {
 
   @Input() 
   public trainings:Training[];
+  
+  @Output() 
+  public trainingSelected = new EventEmitter<Training>();
  
-    onListItemClicked($event:MouseEvent, training:Training){
-    console.log("Training was clicked", training.name)
+  onListItemClicked($event:MouseEvent, training:Training){
+      this.trainingSelected.emit(training);
+      console.log("Training was clicked", training.name)
   }
 }

@@ -1,0 +1,13 @@
+<mat-card id="{{training.id}}">
+      <mat-card-title>
+        {{training.name}} 
+      </mat-card-title>
+
+      <img mat-card-image 
+      *ngIf="training.imageUrl" 
+      [src]=training.imageUrl
+      alt="training image">
+      <mat-card-subtitle>
+    {{training.description}}
+  </mat-card-subtitle>
+</mat-card>

@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrainingListComponent } from './training-list/training-list.component';
-import { MatListModule } from '@angular/material';
+import { MatListModule, MatCard, MatCardModule, MatIconModule } from '@angular/material';
+import { TrainingDetailsComponent } from './training-details/training-details.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatIconModule
   ],
   exports: [
-    TrainingListComponent
+    TrainingListComponent,
+    TrainingDetailsComponent 
   ],
   declarations: [
-    TrainingListComponent
+    TrainingListComponent,
+    TrainingDetailsComponent
   ]
 })
 export class TrainingsModule { }
