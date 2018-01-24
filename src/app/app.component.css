@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+h1{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-weight: 100;
+    text-align:center
+}
+
+.subheader{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-weight: 100;
+    text-align:center
+}

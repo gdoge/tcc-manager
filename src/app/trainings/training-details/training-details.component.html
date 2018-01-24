@@ -1,6 +1,5 @@
-<mat-card 
-id="{{training.id}}"
-class="half-row">
+<!-- <mat-card 
+id="{{training.id}}">
       <mat-card-title>
         {{training.name}} 
       </mat-card-title>
@@ -12,11 +11,12 @@ class="half-row">
 
       <mat-card-subtitle>
     {{training.description}}
-  </mat-card-subtitle>
+  </mat-card-subtitle> -->
   <mat-form-field 
   class="example-full-width">
     <input class="training-name-input"
     [(ngModel)]="training.name" 
-    matInput placeholder="input a training name">
+    [disabled]="training.discontinued"
+    matInput>
   </mat-form-field>
-</mat-card>
+<!-- </mat-card> -->

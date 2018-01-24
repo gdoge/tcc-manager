@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Training } from './trainings/training.model';
+import { TrainingService } from './trainings/training.service';
 
 
 @Component({
@@ -7,17 +8,16 @@ import { Training } from './trainings/training.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   trainings: Training[];
   selectedTraining: Training;
 
-  constructor(){
-    this.trainings = [
-      {name:"test", id:1, discontinued:true},
-      {name:"test2", id:2, description:"this is training 2"},
-      {name:"test3", id:3, description:"training with picture", imageUrl:"assets/images/trainings/angular2-shield.svg"}
-    ]
+  constructor(private trainingService:TrainingService){
+  }
+
+  ngOnInit(){
+    this.trainings = this.trainingService.getAll();
   }
 
   setSelectedTraining(training:Training){
