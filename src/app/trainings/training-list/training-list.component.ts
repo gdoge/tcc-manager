@@ -8,6 +8,8 @@ import { Training } from '../training.model';
 })
 export class TrainingListComponent {
 
+  selectedTraining:Training;
+
   @Input() 
   public trainings:Training[];
   
@@ -16,6 +18,7 @@ export class TrainingListComponent {
  
   onListItemClicked($event:MouseEvent, training:Training){
       this.trainingSelected.emit(training);
+      this.selectedTraining = training;
       console.log("Training was clicked", training.name)
   }
 }
