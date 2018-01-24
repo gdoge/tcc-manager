@@ -5,6 +5,7 @@ import { MatListModule, MatCard, MatCardModule, MatIconModule, MatInputModule, M
 import { TrainingDetailsComponent } from './training-details/training-details.component';
 import { FormsModule } from '@angular/forms';
 import { TrainingService } from './training.service';
+import { TakePlaceSoonPipe } from './take-place-soon.pipe';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { TrainingService } from './training.service';
   ],
   declarations: [
     TrainingListComponent,
-    TrainingDetailsComponent
+    TrainingDetailsComponent,
+    TakePlaceSoonPipe
   ],
   providers: [
     TrainingService

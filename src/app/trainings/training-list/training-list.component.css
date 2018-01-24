@@ -1,11 +1,11 @@
 .training-discontinued {
-    color:grey;
+    background:rgb(246, 246, 246);
     cursor:default;
 }
 
-.training-active{
-    color: royalblue;
-}
+/* .training-active{
+    color: black;
+} */
 
 .training-continued{
     cursor: pointer;
@@ -16,5 +16,9 @@
     margin:auto;
     padding: 10px;
     display: block;
-
 }
+
+
+.soon{
+    background: rgb(255, 242, 237);   
+   }
