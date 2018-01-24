@@ -4,4 +4,5 @@ export interface Training{
     description?:string;
     imageUrl?:string;
     discontinued?:boolean;
+    nextRun:string;
 }

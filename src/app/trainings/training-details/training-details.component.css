@@ -13,3 +13,7 @@ img{
     padding: 10px;
     display: block;
 }
+
+.detail-image{
+    float: right
+}

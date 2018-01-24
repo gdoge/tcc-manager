@@ -1,16 +1,3 @@
-<mat-list role="list">
-  <mat-list-item 
-  role="listitem" 
-  class="half-row" 
-  *ngFor="let training of trainings" 
-  (click)="onListItemClicked($event, training)"
-  [class.training-discontinued]="training.discontinued" 
-  [class.training-active]="training===selectedTraining" 
-  [class.training-continued]="!training.discontinued">
-  {{training.name}}
-  </mat-list-item>
-</mat-list>
-
 <mat-accordion>
     <mat-expansion-panel
     role="listitem" 
