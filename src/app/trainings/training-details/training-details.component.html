@@ -19,14 +19,16 @@ id="{{training.id}}">
     [disabled]="training.discontinued"
     matInput>
   </mat-form-field>
-  <div>
-      {{training.description}}
-      </div>
+
   <img mat-card-image 
   class="detail-image"
   *ngIf="training.imageUrl" 
   [src]=training.imageUrl
   alt="training image">
+
+  <div>
+      {{training.description}}
+      </div>
   <div>
     Next Training: 
     {{training.nextRun | date:'short'}}
