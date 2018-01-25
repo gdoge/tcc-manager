@@ -16,7 +16,8 @@ id="{{training.id}}">
   class="example-full-width">
     <input class="training-name-input"
     [(ngModel)]="training.name" 
-    [disabled]="training.discontinued"
+    [disabled]="training?.discontinued"
+    placeholder="change training name"
     matInput>
   </mat-form-field>
 
@@ -26,7 +27,7 @@ id="{{training.id}}">
   [src]=training.imageUrl
   alt="training image">
 
-  <div>
+  <div class="training-description">
       {{training.description}}
       </div>
   <div>

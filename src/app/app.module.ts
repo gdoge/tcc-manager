@@ -5,7 +5,8 @@ import { MatButtonModule, MatCheckboxModule, MatListModule, MatFormFieldModule, 
 
 import { AppComponent } from './app.component';
 import { TrainingsModule } from './trainings/trainings.module';
-
+import { RouterModule } from '@angular/router'
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -14,8 +15,10 @@ import { TrainingsModule } from './trainings/trainings.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(routes, {enableTracing:true}),
     MatButtonModule, MatCheckboxModule, MatListModule, MatFormFieldModule, MatInputModule,
-    TrainingsModule
+    TrainingsModule,    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

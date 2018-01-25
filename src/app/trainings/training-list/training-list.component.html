@@ -1,47 +1,40 @@
 <mat-list role="list">
-  <mat-list-item 
-  role="listitem" 
-  class="half-row" 
-  *ngFor="let training of trainings" 
-  (click)="onListItemClicked($event, training)"
-  [class.training-discontinued]="training.discontinued" 
-  [class.training-active]="training===selectedTraining" 
-  [class.training-continued]="!training.discontinued">
-  {{training.name}}
+  <mat-list-item role="listitem" class="half-row" 
+  *ngFor="let training of trainings"
+    [class.training-discontinued]="training.discontinued" 
+    [class.training-active]="training===selectedTraining"
+    [class.training-continued]="!training.discontinued"
+    [routerLink] ="[training.id]"
+    >
+    {{training.name}}
   </mat-list-item>
 </mat-list>
 
 <mat-accordion>
-    <mat-expansion-panel
-    role="listitem" 
-    class="half-row" 
-    *ngFor="let training of trainings" 
-    (click)="onListItemClicked($event, training)"
-    [class.soon]="training.nextRun | takePlaceSoon"
-    [class.training-discontinued]="training.discontinued" 
-    [class.training-active]="training===selectedTraining" 
-    [class.training-continued]="!training.discontinued">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-            {{training.name}}
-          </mat-panel-title>
-        <mat-panel-description>
-            <div
-            *ngIf="training.nextRun | takePlaceSoon"
-            >
-            TAKES PLACE SOON
-            </div>        </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      <app-training-details
-      [training]="training"
-      ></app-training-details>
-      <!-- <mat-form-field>
+  <mat-expansion-panel role="listitem" class="half-row" *ngFor="let training of trainings" (click)="onListItemClicked($event, training)"
+    [class.soon]="training.nextRun | takePlaceSoon" [class.training-discontinued]="training.discontinued" [class.training-continued]="!training.discontinued"
+    [class.training-active]="training===selectedTraining">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{training.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <div *ngIf="training.nextRun | takePlaceSoon">
+          TAKES PLACE SOON
+        </div>
+        <div *ngIf="training.discontinued">
+          DISCONTINUED
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-training-details [training]="training"></app-training-details>
+    <!-- <mat-form-field>
         <input matInput placeholder="First name">
       </mat-form-field>
   
       <mat-form-field>
         <input matInput placeholder="Age">
       </mat-form-field> -->
-    </mat-expansion-panel>
+  </mat-expansion-panel>
 </mat-accordion>

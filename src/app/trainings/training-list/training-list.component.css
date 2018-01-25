@@ -3,9 +3,13 @@
     cursor:default;
 }
 
-/* .training-active{
-    color: black;
-} */
+.training-active{
+
+}
+.mat-expansion-panel-header{
+    font-size: 18px;
+}
+
 
 .training-continued{
     cursor: pointer;

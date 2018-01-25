@@ -15,5 +15,11 @@ img{
 }
 
 .detail-image{
-    float: right
+    float: left;
+    padding:10px;
+}
+
+.training-description{
+    padding: 10px;
+    font-size: 16px;
 }

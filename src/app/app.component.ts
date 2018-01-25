@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
   title = 'app';
   trainings$: Observable<Training[]>;
   trainings : Training[];
@@ -21,16 +21,16 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private trainingService:TrainingService){
   }
 
-  ngOnInit(){
-  this.subscription = this.trainingService.getAll().subscribe(result => this.trainings = result);
-  }
+  // ngOnInit(){
+  // this.subscription = this.trainingService.getAll().subscribe(result => this.trainings = result);
+  // }
 
-  ngOnDestroy(): void {
-  this.subscription.unsubscribe(); 
-  }
+  // ngOnDestroy(): void {
+  // this.subscription.unsubscribe(); 
+  // }
 
-  setSelectedTraining(training:Training){
-    this.selectedTraining = training;
-    console.log("EVENT TRAINING IN APP.COMPONENET RECIEVED", training.name)
-  }
+  // setSelectedTraining(training:Training){
+  //   this.selectedTraining = training;
+  //   console.log("EVENT TRAINING IN APP.COMPONENET RECIEVED", training.name)
+  // }
 }

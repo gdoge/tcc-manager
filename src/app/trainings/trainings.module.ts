@@ -6,6 +6,9 @@ import { TrainingDetailsComponent } from './training-details/training-details.co
 import { FormsModule } from '@angular/forms';
 import { TrainingService } from './training.service';
 import { TakePlaceSoonPipe } from './take-place-soon.pipe';
+import { TrainingListRouteComponent } from './training-list-route/training-list-route.component';
+import { TrainingsDetailsRouteComponent } from './trainings-details-route/trainings-details-route.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -17,6 +20,7 @@ import { TakePlaceSoonPipe } from './take-place-soon.pipe';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
+    RouterModule
   ],
   exports: [
     TrainingListComponent,
@@ -25,7 +29,9 @@ import { TakePlaceSoonPipe } from './take-place-soon.pipe';
   declarations: [
     TrainingListComponent,
     TrainingDetailsComponent,
-    TakePlaceSoonPipe
+    TakePlaceSoonPipe,
+    TrainingListRouteComponent,
+    TrainingsDetailsRouteComponent
   ],
   providers: [
     TrainingService

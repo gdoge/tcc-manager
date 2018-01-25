@@ -5,11 +5,12 @@
   </h1>
 </div>
 
-<div class="subheader">The number of trainings is {{trainings.length}}</div>
+<div class="subheader">The number of trainings is {{trainings?.length}}</div>
 
-<app-training-list 
+<!-- <app-training-list 
 [trainings]="trainings"
 (trainingSelected)="setSelectedTraining($event)"
-></app-training-list>
+></app-training-list> -->
 
-<button mat-button>TEST</button>
+<router-outlet>
+</router-outlet>
