@@ -11,6 +11,7 @@ import { TrainingsDetailsRouteComponent } from './trainings-details-route/traini
 import { RouterModule } from '@angular/router';
 import { TrainingExistsGuardService } from './training-exists-guard.service';
 import { ValidatorFutureDate } from './validator-future-date';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { ValidatorFutureDate } from './validator-future-date';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   exports: [
     TrainingListComponent,

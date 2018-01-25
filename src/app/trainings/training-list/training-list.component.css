@@ -27,7 +27,8 @@
    }
 
 .panel-description{
-    margin:auto;
+float:right;
+display: inline;
 }
 
 .mat-expansion-panel-content{

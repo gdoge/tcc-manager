@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TrainingsDetailsRouteComponent } from './trainings-details-route.component';
 
-describe('TrainingsDetailsRouteComponent', () => {
+xdescribe('TrainingsDetailsRouteComponent', () => {
   let component: TrainingsDetailsRouteComponent;
   let fixture: ComponentFixture<TrainingsDetailsRouteComponent>;
 

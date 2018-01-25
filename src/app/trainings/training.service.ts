@@ -6,21 +6,36 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { map, first } from 'rxjs/operators';
 import { isFuture, startOfDay, compareAsc } from 'date-fns';
+import { HttpClient } from '@angular/common/http';
 
-
+interface TrainingsResponse {
+  data: Training[];
+}
 
 @Injectable()
 export class TrainingService {
-
-subject:ReplaySubject<Training[]>;
-
-  constructor() { 
-    this.subject = new ReplaySubject<Training[]>(1);
-    this.subject.next(TRAININGS)
+  private subject: Subject<Training[]> = new ReplaySubject<Training[]>(1);
+// subject: ReplaySubject<Training[]>;
+private cached: boolean = false;
+  constructor(private httpClient:HttpClient) { 
+    // this.subject = new ReplaySubject<Training[]>(1);
+    // this.subject.next(TRAININGS)
   }
 
   getAll():Observable<Training[]> {
+    if (!this.cached) {
+      this.load();
+      this.cached = true;
+    }
     return this.subject.asObservable();
+  }
+
+  load() {
+    this.httpClient.get<TrainingsResponse>('api/training')
+      .pipe(map(response => response.data))
+      .subscribe(trainings => {
+        console.log("HTTP CALL", trainings)
+        this.subject.next(trainings)})
   }
 
   getById(id: number):Observable<Training> {
@@ -67,3 +82,4 @@ subject:ReplaySubject<Training[]>;
   function nextRunInFuture(t: Training):boolean{
     return isFuture(startOfDay(t.nextRun))
   }
+
