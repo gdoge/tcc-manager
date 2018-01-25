@@ -19,28 +19,25 @@ export class TrainingListRouteComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   detailSubscription: Subscription;
 
-  // constructor(private trainingService: TrainingService) { }
-  constructor(private trainingService: TrainingService,  private activeRoute:ActivatedRoute) { }
-
+  constructor(private trainingService: TrainingService) { }
+  // constructor(private trainingService: TrainingService,  private activeRoute:ActivatedRoute) { }
 
   ngOnInit() {
     this.subscription = this.trainingService.getAll().subscribe(result => this.trainings = result);
- 
-
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  trainingClicked(training:Training){
-    this.detailSubscription = this.activeRoute.params
-    .pipe(
-    map(params => parseInt(params['id'])),
-    switchMap(id => this.trainingService.getById(id)),
-    )
-  .subscribe(t => this.selectedTraining = t);    
-  }
+  // trainingClicked(training:Training){
+  //   this.detailSubscription = this.activeRoute.params
+  //   .pipe(
+  //   map(params => parseInt(params['id'])),
+  //   switchMap(id => this.trainingService.getById(id)),
+  //   )
+  // .subscribe(t => this.selectedTraining = t);    
+  // }
 
   // setSelectedTraining(training: Training) {
   //   this.selectedTraining = training;

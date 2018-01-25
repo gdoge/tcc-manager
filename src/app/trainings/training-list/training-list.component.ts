@@ -16,9 +16,9 @@ export class TrainingListComponent {
   @Output() 
   public trainingSelected = new EventEmitter<Training>();
  
-  onListItemClicked($event:MouseEvent, training:Training){
-      this.trainingSelected.emit(training);
-      this.selectedTraining = training;
-      console.log("Training was clicked", training.name)
-  }
+  // onListItemClicked($event:MouseEvent, training:Training){
+  //     this.trainingSelected.emit(training);
+  //     this.selectedTraining = training;
+  //     console.log("Training was clicked", training.name)
+  // }
 }

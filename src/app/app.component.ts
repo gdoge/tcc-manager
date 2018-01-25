@@ -17,9 +17,13 @@ export class AppComponent {
   trainings : Training[];
   selectedTraining: Training;
   subscription:Subscription;
+  nextTraining: Observable<Training>;
 
   constructor(private trainingService:TrainingService){
+    this.nextTraining = trainingService.getNext();
   }
+
+
 
   // ngOnInit(){
   // this.subscription = this.trainingService.getAll().subscribe(result => this.trainings = result);

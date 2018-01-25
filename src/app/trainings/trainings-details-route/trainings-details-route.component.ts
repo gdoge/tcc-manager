@@ -14,6 +14,7 @@ import { TrainingService } from '../training.service';
 export class TrainingsDetailsRouteComponent implements OnInit {
   training:Training;
   subscription:Subscription;
+  trainingFormData:Partial<Training>
 
   constructor(private activeRoute:ActivatedRoute , private trainingService:TrainingService) { }
 
@@ -26,4 +27,9 @@ export class TrainingsDetailsRouteComponent implements OnInit {
     .subscribe(t => this.training = t);    
   }
 
+  emitTrainingFormData($event:Partial<Training>){
+    this.trainingFormData = $event;
+    this.trainingService.update(this.training.id, $event)
+    console.log("Training Form Data recieved", this.trainingFormData)
+  }
 }

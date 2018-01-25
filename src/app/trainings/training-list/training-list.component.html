@@ -19,16 +19,18 @@
         {{training.name}}
       </mat-panel-title>
       <mat-panel-description>
-        <div *ngIf="training.nextRun | takePlaceSoon">
+        <div *ngIf="training.nextRun | takePlaceSoon"
+        class="panel-description">
           TAKES PLACE SOON
         </div>
-        <div *ngIf="training.discontinued">
+        <div *ngIf="training.discontinued"
+        class="panel-description">
           DISCONTINUED
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>
-
-    <app-training-details [training]="training"></app-training-details>
+    <mat-divider></mat-divider>
+    <app-training-details class="training-details" [training]="training"></app-training-details>
     <!-- <mat-form-field>
         <input matInput placeholder="First name">
       </mat-form-field>
